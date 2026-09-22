@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bhaiya — Intelligent Kitchen & Home Companion</title>
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    .accent-gradient { background: linear-gradient(135deg, #FF6B35 0%, #F9844A 100%); }
+    .card-shadow { box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.02); }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-900 antialiased min-h-screen flex flex-col justify-between">
+
+  <!-- Ownership & Confidentiality Notice -->
+  <div class="bg-slate-900 text-slate-300 text-xs py-2 px-4 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
+      <div class="flex items-center gap-2">
+        <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span class="font-medium text-slate-200">Interactive Concept Prototype</span>
+      </div>
+      <div class="text-slate-400">
+        &copy; 2026 Amir. All Rights Reserved. Proprietary Work.
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="w-10 h-10 rounded-xl accent-gradient flex items-center justify-center text-white font-black text-xl shadow-md">
+          भ
+        </div>
+        <div>
+          <span class="text-xl font-bold tracking-tight text-slate-900">Bhaiya<span class="text-amber-600">.</span></span>
+          <span class="block text-[10px] text-slate-500 font-semibold tracking-wide uppercase">Your Home Companion</span>
+        </div>
+      </div>
+      <nav class="hidden md:flex space-x-6 text-sm font-medium text-slate-600">
+        <a href="#recipe-engine" class="hover:text-amber-600 transition">Recipe-to-Cart</a>
+        <a href="#mandi-network" class="hover:text-amber-600 transition">Local Mandi Network</a>
+        <a href="#voice-guide" class="hover:text-amber-600 transition">Voice Guide</a>
+        <a href="#features" class="hover:text-amber-600 transition">Why Bhaiya</a>
+      </nav>
+      <div class="flex items-center gap-2">
+        <span class="text-xs font-bold text-amber-700 bg-amber-50 border border-amber-200 px-3 py-1.5 rounded-lg shadow-sm">
+          Prototype v1.0
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative bg-white border-b border-slate-200 overflow-hidden py-14 md:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <div>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-amber-50 text-amber-700 border border-amber-200 mb-4">
+            Built for Newlyweds & Modern Indian Households
+          </span>
+          <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-950 tracking-tight leading-tight mb-5">
+            Like an elder brother for your <span class="text-transparent bg-clip-text accent-gradient">kitchen & home</span>.
+          </h1>
+          <p class="text-base sm:text-lg text-slate-600 mb-6 leading-relaxed">
+            Eliminate wasted groceries, grocery run stress, and everyday meal dilemmas. Bhaiya calculates exact portion ingredients, routes orders directly from neighborhood mandis, and guides your cooking step-by-step.
+          </p>
+          <div class="flex flex-wrap gap-4 text-xs font-medium text-slate-500">
+            <div class="flex items-center gap-1.5">
+              <svg class="w-4 h-4 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+              Zero Food Waste
+            </div>
+            <div class="flex items-center gap-1.5">
+              <svg class="w-4 h-4 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+              Hyper-Local Sabzi Mandi Rates
+            </div>
+            <div class="flex items-center gap-1.5">
+              <svg class="w-4 h-4 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+              Timed to Your Cooking Prep
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Preview Card -->
+        <div class="bg-gradient-to-br from-amber-500/10 to-orange-500/10 p-2 sm:p-4 rounded-2xl border border-amber-100">
+          <div class="bg-white rounded-xl card-shadow p-6 border border-slate-100">
+            <div class="flex items-center justify-between pb-4 border-b border-slate-100">
+              <div class="flex items-center space-x-2">
+                <span class="w-3 h-3 bg-emerald-500 rounded-full"></span>
+                <span class="text-xs font-semibold uppercase text-slate-500">Live Engine Status</span>
+              </div>
+              <span class="text-xs font-bold text-amber-600 bg-amber-50 px-2 py-1 rounded">2 People (Newlywed Setup)</span>
+            </div>
+            <div class="mt-4 space-y-3">
+              <div class="p-3 bg-slate-50 rounded-lg flex items-center justify-between">
+                <div>
+                  <p class="text-xs text-slate-500">Tonight's Dinner Plan</p>
+                  <p class="text-sm font-bold text-slate-800">Shahi Paneer + Phulkas</p>
+                </div>
+                <span class="text-xs font-semibold text-slate-600">30 min prep</span>
+              </div>
+              <div class="p-3 bg-amber-50/50 rounded-lg flex items-center justify-between border border-amber-100">
+                <div>
+                  <p class="text-xs text-amber-700 font-medium">Portion Exact Ingredients</p>
+                  <p class="text-xs text-slate-600">200g Paneer, 2 Tomatoes, 1 Onion, Fresh Cream</p>
+                </div>
+                <span class="text-xs font-bold text-amber-700">₹142 Total</span>
+              </div>
+              <div class="p-3 bg-emerald-50 rounded-lg flex items-center justify-between border border-emerald-100">
+                <div class="flex items-center space-x-2">
+                  <span class="text-lg">📍</span>
+                  <div>
+                    <p class="text-xs font-bold text-emerald-800">Local Mandi Partner: Sharma Veg Store</p>
+                    <p class="text-[11px] text-emerald-700">650m away • Delivery timed at 7:30 PM (Pre-Cooking)</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Section: Dynamic Recipe-to-Cart Engine -->
+  <section id="recipe-engine" class="py-16 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl mx-auto text-center mb-10">
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">Portion-Exact Recipe-to-Cart Engine</h2>
+        <p class="text-sm text-slate-600 mt-2">
+          Adjust the headcount slider. Notice how our formula calculates exact gram-weights and costs so young couples don't let spoiled vegetables rot in the fridge.
+        </p>
+      </div>
+
+      <div class="max-w-4xl mx-auto bg-white rounded-2xl border border-slate-200 card-shadow p-6 sm:p-8">
+        <!-- Controls -->
+        <div class="grid sm:grid-cols-2 gap-6 pb-6 border-b border-slate-200">
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">Select Dish</label>
+            <select id="dishSelect" class="w-full bg-slate-50 border border-slate-300 rounded-lg p-3 text-sm font-semibold text-slate-800 focus:outline-none focus:border-amber-500">
+              <option value="paneer">Matar Paneer & Roti (North Indian Classic)</option>
+              <option value="dal">Dal Tadka & Steamed Rice (Quick Comfort)</option>
+              <option value="pulao">Subz Tawa Pulao & Raita (15-Min Dinner)</option>
+            </select>
+          </div>
+          <div>
+            <div class="flex justify-between items-center mb-2">
+              <label class="text-xs font-bold uppercase tracking-wider text-slate-500">Headcount / Portions</label>
+              <span id="headcountDisplay" class="text-sm font-bold text-amber-600 bg-amber-50 px-2 py-0.5 rounded border border-amber-200">2 People (Couple)</span>
+            </div>
+            <input type="range" id="headcountSlider" min="1" max="6" value="2" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-amber-600">
+            <div class="flex justify-between text-[11px] text-slate-400 mt-1">
+              <span>1 (Solo)</span>
+              <span>2 (Newlywed)</span>
+              <span>4 (Family)</span>
+              <span>6 (Guests)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Calculated Ingredient Table -->
+        <div class="mt-6">
+          <h3 class="text-sm font-bold text-slate-800 uppercase tracking-wider mb-4 flex items-center justify-between">
+            <span>Calculated Ingredient Checklist</span>
+            <span class="text-xs normal-case text-emerald-600 font-semibold bg-emerald-50 px-2 py-1 rounded">No Surplus Waste</span>
+          </h3>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-sm">
+              <thead class="bg-slate-50 text-slate-500 text-xs font-semibold uppercase border-b border-slate-200">
+                <tr>
+                  <th class="py-2.5 px-4">Ingredient</th>
+                  <th class="py-2.5 px-4">Calculated Quantity</th>
+                  <th class="py-2.5 px-4">Local Sourcing</th>
+                  <th class="py-2.5 px-4 text-right">Est. Price</th>
+                </tr>
+              </thead>
+              <tbody id="ingredientTableBody" class="divide-y divide-slate-100">
+                <!-- Injected via JavaScript -->
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Total Calculation Bar -->
+          <div class="mt-6 p-4 bg-slate-900 text-white rounded-xl flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div>
+              <p class="text-xs text-slate-400">Total Calculated Cost from Local Vendors</p>
+              <p class="text-2xl font-black text-amber-400" id="totalPrice">₹125</p>
+            </div>
+            <button onclick="simulateOrder()" class="w-full sm:w-auto accent-gradient hover:opacity-90 text-white font-bold text-xs uppercase tracking-wider px-6 py-3 rounded-lg shadow transition">
+              Simulate Vendor Dispatch
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Section: Hyper-Local Mandi & Meal Timing -->
+  <section id="mandi-network" class="py-16 bg-white border-t border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-amber-600">Neighborhood Logistics Engine</span>
+          <h2 class="text-3xl font-extrabold text-slate-900 mt-2 mb-4 leading-snug">
+            Directly from your local Mandi, not old warehouse stock.
+          </h2>
+          <p class="text-slate-600 text-sm leading-relaxed mb-6">
+            Unlike standard dark-store delivery apps that stock packaged items for days, Bhaiya connects directly to local sabzi walas and neighborhood grocers within a 1.5 km radius. Fresher produce at mandi rates, delivered right when your stove turns on.
+          </p>
+          <div class="space-y-4">
+            <div class="flex items-start space-x-3">
+              <div class="w-8 h-8 rounded-lg bg-amber-100 text-amber-700 flex items-center justify-center font-bold text-sm shrink-0">1</div>
+              <div>
+                <h4 class="text-sm font-bold text-slate-800">Smart Meal-Prep Timing</h4>
+                <p class="text-xs text-slate-500">Pick when you plan to cook (e.g., 8:00 PM). Ingredients reach your door 20 minutes before prep starts.</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-3">
+              <div class="w-8 h-8 rounded-lg bg-amber-100 text-amber-700 flex items-center justify-center font-bold text-sm shrink-0">2</div>
+              <div>
+                <h4 class="text-sm font-bold text-slate-800">Zero-Compromise Substitutions</h4>
+                <p class="text-xs text-slate-500">If coriander or specific local greens run out, the app automatically suggests the best culinary swap.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Vendor Dispatch Simulator -->
+        <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 card-shadow">
+          <div class="flex justify-between items-center mb-4 pb-3 border-b border-slate-200">
+            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-600">Nearby Vendor Routing Simulator</h4>
+            <span class="text-[11px] bg-slate-200 text-slate-700 px-2 py-0.5 rounded font-mono">Radius: 1.2 KM</span>
+          </div>
+          <div class="space-y-3">
+            <div class="p-3 bg-white rounded-lg border border-slate-200 flex items-center justify-between">
+              <div>
+                <p class="text-xs font-bold text-slate-800">Gupta Ji Mandi Stall #4</p>
+                <p class="text-[11px] text-slate-500">Fresh Produce, Onions, Herbs • 450m</p>
+              </div>
+              <span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-1 rounded">Active (4 min away)</span>
+            </div>
+            <div class="p-3 bg-white rounded-lg border border-slate-200 flex items-center justify-between">
+              <div>
+                <p class="text-xs font-bold text-slate-800">Verma Dairy & Provisions</p>
+                <p class="text-[11px] text-slate-500">Fresh Malai Paneer, Dahi, Butter • 800m</p>
+              </div>
+              <span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-1 rounded">Active (8 min away)</span>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-200">
+              <label class="block text-xs font-bold text-slate-600 mb-1">Select Today's Cooking Time:</label>
+              <div class="flex gap-2">
+                <button onclick="setTime(this, '7:30 PM')" class="time-btn active text-xs font-semibold px-3 py-1.5 rounded-lg border border-amber-500 bg-amber-50 text-amber-700">7:30 PM (Dinner)</button>
+                <button onclick="setTime(this, '8:30 PM')" class="time-btn text-xs font-semibold px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-slate-600">8:30 PM (Late Dinner)</button>
+                <button onclick="setTime(this, 'Tomorrow 8 AM')" class="time-btn text-xs font-semibold px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-slate-600">Tomorrow 8:00 AM</button>
+              </div>
+              <p id="timingNote" class="text-xs text-amber-700 font-medium mt-2">Delivery window scheduled for 7:00 PM - 7:15 PM so veggies are chopped fresh.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Section: Multilingual Voice Cooking Guide -->
+  <section id="voice-guide" class="py-16 bg-slate-50 border-b border-slate-200">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span class="text-xs font-bold uppercase tracking-wider text-amber-600">Hands-Free In the Kitchen</span>
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-2 mb-3">Multilingual Voice-Assisted Cooking</h2>
+      <p class="text-sm text-slate-600 mb-8 max-w-xl mx-auto">
+        Young couples learning new family recipes don't need messy phone screens. Bhaiya acts like an elder sibling guiding every step through voice prompts in English or Hindi.
+      </p>
+
+      <div class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 card-shadow text-left">
+        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 pb-4 border-b border-slate-200">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Step Guide Demo</span>
+            <h3 class="text-lg font-bold text-slate-900" id="currentDishTitle">Matar Paneer — Step 2 of 4</h3>
+          </div>
+          <div class="flex items-center space-x-2">
+            <span class="text-xs font-semibold text-slate-500">Language:</span>
+            <select id="langSelect" onchange="updateStepContent()" class="text-xs font-bold bg-slate-100 border border-slate-300 rounded px-2 py-1">
+              <option value="en">English</option>
+              <option value="hi">Hindi (हिंदी)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="my-6 p-4 rounded-xl bg-amber-50/60 border border-amber-200/80 flex items-start gap-4">
+          <div class="w-10 h-10 rounded-full bg-amber-500 text-white flex items-center justify-center shrink-0 shadow">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"></path></svg>
+          </div>
+          <div>
+            <p class="text-xs font-bold text-amber-800 uppercase tracking-wider">Audio Companion Simulation</p>
+            <p class="text-sm sm:text-base font-semibold text-slate-800 mt-1" id="voiceInstruction">
+              "Heat 1 tablespoon of oil. Add the cumin seeds and saute the pureed onions until golden brown before adding ginger paste."
+            </p>
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row justify-between items-center gap-3">
+          <button onclick="prevStep()" class="w-full sm:w-auto px-4 py-2 border border-slate-300 rounded-lg text-xs font-bold text-slate-600 hover:bg-slate-100 transition">
+            &larr; Previous Step
+          </button>
+          <div class="flex gap-2">
+            <button onclick="playVoiceSim()" class="px-5 py-2 bg-amber-600 hover:bg-amber-700 text-white rounded-lg text-xs font-bold shadow transition flex items-center gap-2">
+              <span>🔊</span> Play Audio Note
+            </button>
+          </div>
+          <button onclick="nextStep()" class="w-full sm:w-auto px-4 py-2 border border-slate-300 rounded-lg text-xs font-bold text-slate-600 hover:bg-slate-100 transition">
+            Next Step &rarr;
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Differentiators Grid -->
+  <section id="features" class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-xl mx-auto mb-12">
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">Purpose-Built for Indian Homes</h2>
+        <p class="text-xs sm:text-sm text-slate-500 mt-2">Solving the real daily dilemmas of young married couples starting their households.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="p-6 rounded-xl border border-slate-200 bg-slate-50">
+          <div class="text-2xl mb-3">⚖️</div>
+          <h3 class="text-base font-bold text-slate-900 mb-1">Tailored Headcount Quantities</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">No need to buy 1 kg bundles when you only need 2 green chillies and 1 lime for lunch. Cuts grocery bills by up to 35%.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-slate-200 bg-slate-50">
+          <div class="text-2xl mb-3">⏱️</div>
+          <h3 class="text-base font-bold text-slate-900 mb-1">Working Couples Time-Filter</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">Filter recipes by available evening energy: 15-minute express dinners, quick one-pot khichdi, or elaborate Sunday meals.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-slate-200 bg-slate-50">
+          <div class="text-2xl mb-3">🔄</div>
+          <h3 class="text-base font-bold text-slate-900 mb-1">Smart Substitutions</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">Out of kasuri methi or fresh cream? Bhaiya prompts culinary-safe pantry substitutes right on your screen.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer with Amir Copyright -->
+  <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-8 items-center pb-8 border-b border-slate-800">
+        <div>
+          <div class="flex items-center space-x-2 text-white font-bold text-lg mb-2">
+            <span class="w-7 h-7 rounded-lg accent-gradient flex items-center justify-center text-xs font-black">भ</span>
+            <span>Bhaiya App Prototype</span>
+          </div>
+          <p class="text-xs text-slate-400 leading-relaxed max-w-md">
+            A hyper-local kitchen intelligence and grocery management web prototype designed for young Indian families, addressing urban domestic food waste and local vendor empowerment.
+          </p>
+        </div>
+        <div class="bg-slate-900 p-4 rounded-xl border border-slate-800 text-xs md:text-right">
+          <p class="font-bold text-slate-200 uppercase tracking-wide mb-1">Project Ownership & Rights</p>
+          <p class="text-slate-300 font-medium">Founder & Concept Creator: <strong class="text-amber-400">Amir</strong></p>
+          <p class="text-slate-400 mt-1">Status: Proprietary Concept & Functional Prototype v1.0</p>
+        </div>
+      </div>
+      <div class="pt-6 flex flex-col sm:flex-row justify-between items-center text-[11px] text-slate-400 gap-2">
+        <p>&copy; 2026 Amir. All Rights Reserved. Proprietary Concept & Prototype.</p>
+        <p>Protected Intellectual Property</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Embedded Client-Side Prototype Logic -->
+  <script>
+    // Data Models for Headcount Calculations
+    const recipes = {
+      paneer: {
+        name: "Matar Paneer & Roti",
+        basePortion: 2,
+        basePrice: 125,
+        ingredients: [
+          { name: "Fresh Malai Paneer", baseQty: 200, unit: "g", ratePerUnit: 0.35, vendor: "Verma Dairy" },
+          { name: "Green Peas (Matar)", baseQty: 150, unit: "g", ratePerUnit: 0.12, vendor: "Gupta Ji Mandi" },
+          { name: "Red Tomatoes", baseQty: 2, unit: "pcs", ratePerUnit: 6, vendor: "Gupta Ji Mandi" },
+          { name: "Onions & Ginger-Garlic", baseQty: 2, unit: "pcs", ratePerUnit: 4, vendor: "Gupta Ji Mandi" },
+          { name: "Atta (Wheat Flour)", baseQty: 180, unit: "g", ratePerUnit: 0.05, vendor: "Local Kirana" }
+        ],
+        steps: [
+          { en: "Dice the paneer into neat cubes. Soak them in warm water for 5 minutes for softness.", hi: "पनीर को छोटे टुकड़ों में काट लें और 5 मिनट के लिए गुनगुने पानी में भिगो दें ताकि वह मुलायम रहे।" },
+          { en: "Heat 1 tbsp oil. Saute cumin and pureed onions until golden brown before adding ginger paste.", hi: "1 चम्मच तेल गरम करें। जीरा और पिसा हुआ प्याज सुनहरा होने तक भूनें, फिर अदरक का पेस्ट डालें।" },
+          { en: "Add pureed tomatoes and cook until oil separates. Mix in turmeric, coriander, and garam masala.", hi: "टमाटर प्यूरी डालें और तब तक पकाएं जब तक तेल अलग न होने लगे। हल्दी, धनिया और गरम मसाला मिलाएं।" },
+          { en: "Toss in green peas and paneer cubes. Simmer on medium flame for 7 minutes. Serve hot with rotis!", hi: "मटर और पनीर के टुकड़े डालें। 7 मिनट तक मध्यम आंच पर पकने दें। गरमा-गरम रोटियों के साथ परोसें!" }
+        ]
+      },
+      dal: {
+        name: "Dal Tadka & Steamed Rice",
+        basePortion: 2,
+        basePrice: 85,
+        ingredients: [
+          { name: "Toor Dal (Arhar)", baseQty: 120, unit: "g", ratePerUnit: 0.16, vendor: "Local Kirana" },
+          { name: "Basmati Rice", baseQty: 160, unit: "g", ratePerUnit: 0.10, vendor: "Local Kirana" },
+          { name: "Desi Ghee", baseQty: 25, unit: "g", ratePerUnit: 0.60, vendor: "Verma Dairy" },
+          { name: "Garlic, Hing & Mustard Seeds", baseQty: 1, unit: "portion", ratePerUnit: 12, vendor: "Gupta Ji Mandi" }
+        ],
+        steps: [
+          { en: "Wash Toor Dal thoroughly and pressure cook with turmeric and salt for 3 whistles.", hi: "तूर दाल को अच्छी तरह धो लें और हल्दी और नमक डालकर कुकर में 3 सीटी आने तक पकाएं।" },
+          { en: "Prepare aromatic tadka: heat desi ghee, crackle mustard seeds, dried red chillies, and crushed garlic.", hi: "तड़का तैयार करें: देसी घी गरम करें, राई, सूखी लाल मिर्च और कुटा हुआ लहसुन चटकाएं।" },
+          { en: "Pour the hot tadka directly over the cooked dal with a pinch of hing. Cover immediately to lock aroma.", hi: "पकी हुई दाल पर हींग के साथ गरम तड़का लगाएं और खुशबू बनाए रखने के लिए तुरंत ढक्कन लगा दें।" }
+        ]
+      },
+      pulao: {
+        name: "Subz Tawa Pulao & Raita",
+        basePortion: 2,
+        basePrice: 95,
+        ingredients: [
+          { name: "Pre-cooked Long Grain Rice", baseQty: 250, unit: "g", ratePerUnit: 0.08, vendor: "Local Kirana" },
+          { name: "Chopped Mixed Veggies (Carrot/Beans/Capsicum)", baseQty: 180, unit: "g", ratePerUnit: 0.18, vendor: "Gupta Ji Mandi" },
+          { name: "Pav Bhaji Masala & Spices", baseQty: 1, unit: "portion", ratePerUnit: 10, vendor: "Local Kirana" },
+          { name: "Fresh Curd for Raita", baseQty: 200, unit: "g", ratePerUnit: 0.12, vendor: "Verma Dairy" }
+        ],
+        steps: [
+          { en: "Saute crunchy veggies on high heat in butter with pav bhaji masala for 3 minutes.", hi: "मक्खन में तेज आंच पर कटी हुई सब्जियों को पाव भाजी मसाले के साथ 3 मिनट तक भूनें।" },
+          { en: "Gently fold in the cooked rice. Toss thoroughly without breaking the grains.", hi: "पके हुए चावल डालें और हल्के हाथों से मिलाएं ताकि दाने टूटे नहीं।" },
+          { en: "Whisk curd with roasted cumin powder and cucumber for the side raita.", hi: "दही में भुना जीरा पाउडर और खीरा मिलाकर रायता तैयार करें।" }
+        ]
+      }
+    };
+
+    let currentDish = 'paneer';
+    let currentHeadcount = 2;
+    let currentStepIndex = 0;
+
+    const dishSelect = document.getElementById('dishSelect');
+    const headcountSlider = document.getElementById('headcountSlider');
+    const headcountDisplay = document.getElementById('headcountDisplay');
+    const ingredientTableBody = document.getElementById('ingredientTableBody');
+    const totalPriceEl = document.getElementById('totalPrice');
+
+    function renderEngine() {
+      const data = recipes[currentDish];
+      const ratio = currentHeadcount / data.basePortion;
+      
+      headcountDisplay.innerText = `${currentHeadcount} ${currentHeadcount === 2 ? 'People (Newlywed Couple)' : currentHeadcount === 1 ? 'Person (Solo)' : 'People'}`;
+
+      let runningTotal = 0;
+      ingredientTableBody.innerHTML = '';
+
+      data.ingredients.forEach(item => {
+        const qty = Math.round(item.baseQty * ratio);
+        const cost = Math.round(qty * item.ratePerUnit);
+        runningTotal += cost;
+
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td class="py-2.5 px-4 font-semibold text-slate-800">${item.name}</td>
+          <td class="py-2.5 px-4 font-bold text-amber-700">${qty} ${item.unit}</td>
+          <td class="py-2.5 px-4 text-xs text-slate-500">${item.vendor}</td>
+          <td class="py-2.5 px-4 text-right font-bold text-slate-800">₹${cost}</td>
+        `;
+        ingredientTableBody.appendChild(row);
+      });
+
+      totalPriceEl.innerText = `₹${runningTotal}`;
+      updateStepContent();
+    }
+
+    dishSelect.addEventListener('change', (e) => {
+      currentDish = e.target.value;
+      currentStepIndex = 0;
+      renderEngine();
+    });
+
+    headcountSlider.addEventListener('input', (e) => {
+      currentHeadcount = parseInt(e.target.value);
+      renderEngine();
+    });
+
+    // Voice Step Simulator
+    function updateStepContent() {
+      const data = recipes[currentDish];
+      const lang = document.getElementById('langSelect').value;
+      const step = data.steps[currentStepIndex] || data.steps[0];
+      
+      document.getElementById('currentDishTitle').innerText = `${data.name} — Step ${currentStepIndex + 1} of ${data.steps.length}`;
+      document.getElementById('voiceInstruction').innerText = `"${step[lang]}"`;
+    }
+
+    function nextStep() {
+      const data = recipes[currentDish];
+      if (currentStepIndex < data.steps.length - 1) {
+        currentStepIndex++;
+        updateStepContent();
+      }
+    }
+
+    function prevStep() {
+      if (currentStepIndex > 0) {
+        currentStepIndex--;
+        updateStepContent();
+      }
+    }
+
+    function playVoiceSim() {
+      const lang = document.getElementById('langSelect').value;
+      const text = document.getElementById('voiceInstruction').innerText;
+      if ('speechSynthesis' in window) {
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = lang === 'hi' ? 'hi-IN' : 'en-IN';
+        window.speechSynthesis.speak(utterance);
+      } else {
+        alert("Playing audio voice-guide simulation:\n" + text);
+      }
+    }
+
+    function simulateOrder() {
+      alert(`[Bhaiya Engine Simulator]\n✓ Scaled to ${currentHeadcount} portions.\n✓ Routed to neighborhood vendors.\n✓ Zero surplus ingredients.`);
+    }
+
+    function setTime(btn, label) {
+      document.querySelectorAll('.time-btn').forEach(b => {
+        b.classList.remove('border-amber-500', 'bg-amber-50', 'text-amber-700');
+        b.classList.add('border-slate-200', 'bg-white', 'text-slate-600');
+      });
+      btn.classList.add('border-amber-500', 'bg-amber-50', 'text-amber-700');
+      btn.classList.remove('border-slate-200', 'bg-white', 'text-slate-600');
+      document.getElementById('timingNote').innerText = `Delivery window scheduled 20 minutes before ${label} for peak kitchen freshness.`;
+    }
+
+    // Initial render
+    renderEngine();
+  </script>
+</body>
+</html>
